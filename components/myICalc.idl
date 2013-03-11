@@ -1,0 +1,6 @@
+#include "nsISupports.idl"
+[scriptable, uuid(b87e4fb8-a738-42f9-891e-dea18d293926)]
+interface myICalc : nsISupports
+{
+  long add(in long a, in long b);
+};

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<overlay
+  id="test-overlay"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <menubar id="main-menubar">
+    <menu label="XPCOM sample">
+    <menupopup>
+      <menuitem label="Call sample XPCOM"
+        oncommand="
+(function () {
+var obj;
+try {
+  const cid = '@cozmixng.org/xpcom-sample/Calc;1';
+  obj = Components.classes[cid].createInstance();
+  obj = obj.QueryInterface(Components.interfaces.myICalc);
+} catch (err) {
+  alert(err);
+  return;
+}
+alert('7 + 4 = ' + obj.add(3, 4));
+})();
+"/>
+      </menupopup>
+    </menu>
+  </menubar>
+</overlay>
