@@ -1,5 +1,5 @@
 content	xpcom_sample	content/
 overlay	chrome://browser/content/browser.xul	chrome://xpcom_sample/content/overlay.xul
 
-interfaces components/myCalc.xpt
+interfaces components/myICalc.xpt
 binary-component components/myCalc.so
