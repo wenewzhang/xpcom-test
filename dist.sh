@@ -1,10 +1,10 @@
-#!/bin/sh
+#!/bin/bash
 
 cd `dirname $0`
 
 #basename=`basename $PWD`
 basename=xpcom-sample
-version=`grep '<em:version>' install.rdf | sed -e 's,</\?em:version>,,g'`
+version=`grep '<em:version>' install.rdf | sed -e 's/..em:version.//g'`
 version=`echo $version | sed -e 's/[[:space:]]//g'`
 
 xpi=$basename-$version.xpi
@@ -22,5 +22,4 @@ echo "rm -f $xpi"
 rm -f $xpi
 echo "zip -q -r -9 $xpi $xpi_contents -x \*/.svn/\* || exit 1"
 zip -q -r -9 $xpi $xpi_contents -x \*/.svn/\* || exit 1
-
 echo "..done"
