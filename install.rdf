@@ -7,7 +7,8 @@
     <em:version>0.1</em:version>
     <em:description>XPCOM sample</em:description>
     <em:creator>Kouhei Sutou</em:creator>
-
+    <em:unpack>true</em:unpack>
+    
     <em:targetApplication>
       <Description>
         <!-- Fixed ID for firefox -->
